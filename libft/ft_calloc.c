@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/21 16:12:36 by tblaase           #+#    #+#             */
+/*   Updated: 2021/06/28 17:47:13 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+void	*ft_calloc(size_t nelem, size_t elsize)
 {
+	char			*ptr;
+	unsigned int	i;
+
+	i = 0;
+	ptr = (char *)malloc(nelem * elsize);
+	if (ptr == NULL)
+		return (0);
+	while (i < nelem * elsize)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return (ptr);
 }

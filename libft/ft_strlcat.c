@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/17 10:37:33 by tblaase           #+#    #+#             */
+/*   Updated: 2021/06/28 19:48:59 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t	i;
+	int		a;
+	size_t	b;
+
+	a = 0;
+	i = ft_strlen(dst);
+	b = i;
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	if (dstsize < b)
+		return (ft_strlen(src) + dstsize);
+	else
+	{
+		while (i < dstsize - 1 && src[a] != '\0')
+		{
+			dst[i] = src[a];
+			i++;
+			a++;
+		}
+		dst[i] = '\0';
+		return (b + ft_strlen(src));
+	}
 }

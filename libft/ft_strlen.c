@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/16 16:44:04 by tblaase           #+#    #+#             */
+/*   Updated: 2021/06/27 14:48:11 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+size_t	ft_strlen(const char *s)
 {
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
 }

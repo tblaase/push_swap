@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_input_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/08/20 14:32:51 by tblaase           #+#    #+#             */
+/*   Updated: 2021/08/20 16:51:06 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+int	ft_input_error(int argc, char **argv)
 {
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 1;
+	while (argv[j] != NULL)
+	{
+		while (argv[j][i] != '\0')
+		{
+			if (!ft_isdigit(argv[j][i]))
+				return (1);
+			i++;
+		}
+		j++;
+	}
+	return (0);
 }

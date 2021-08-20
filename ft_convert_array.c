@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_convert_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/08/20 14:55:28 by tblaase           #+#    #+#             */
+/*   Updated: 2021/08/20 16:50:52 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+// #include "push_swap.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
-{
-}
+// int	**ft_convert_array(int argc, char **string)
+// {
+// 	int	*integer;
+// 	int	i;
+
+// 	integer = malloc(sizeof(int *));
+// 	i = 1;
+// 	while (i < argc)
+// 	{
+// 		integer[i -1] = malloc(sizeof(int *));
+// 		integer[i - 1] = (int *)ft_atoi(string[i]);
+// 		i++;
+// 	}
+// 	return (integer);
+// }

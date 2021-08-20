@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/19 08:54:29 by tblaase           #+#    #+#             */
+/*   Updated: 2021/06/26 15:46:44 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
+	unsigned char		a;
+	unsigned int		i;
+	unsigned char		*cdst;
+	unsigned const char	*csrc;
+
+	i = 0;
+	a = c;
+	cdst = (unsigned char *)dst;
+	csrc = (unsigned const char *)src;
+	while (i < n)
+	{
+		cdst[i] = csrc[i];
+		if (a == cdst[i])
+			return (dst + i + 1);
+		i++;
+	}
+	return (0);
 }

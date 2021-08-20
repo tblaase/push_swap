@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned_nbr.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/07/08 14:42:21 by tblaase           #+#    #+#             */
+/*   Updated: 2021/07/08 14:50:50 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+void	ft_put_unsigned_nbr(unsigned int a)
 {
+	char	c;
+
+	if (a >= 10)
+	{
+		ft_put_unsigned_nbr(a / 10);
+		ft_put_unsigned_nbr(a % 10);
+	}
+	else
+	{
+		c = a + '0';
+		write(1, &c, 1);
+	}
 }

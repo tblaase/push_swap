@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/25 10:15:38 by tblaase           #+#    #+#             */
+/*   Updated: 2021/06/28 15:56:52 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+char	*ft_strmapi(const char *s, char (*f) (unsigned int, char))
 {
+	unsigned int	i;
+	char			*res;
+
+	if (!s)
+		return (0);
+	i = 0;
+	res = malloc(ft_strlen(s) + 1);
+	if (res == '\0' || s == '\0' || f == '\0')
+		return (0);
+	while (s[i] != '\0')
+	{
+		res[i] = (*f)(i, s[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }

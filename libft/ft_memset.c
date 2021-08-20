@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/15 11:43:26 by tblaase           #+#    #+#             */
+/*   Updated: 2021/06/21 15:27:40 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+void	*ft_memset(void *b, int c, size_t len)
 {
+	unsigned char	a;
+	unsigned int	i;
+	unsigned char	*b1;
+
+	a = c;
+	i = 0;
+	b1 = (unsigned char *)b;
+	while (i < len)
+	{
+		b1[i] = a;
+		i++;
+	}
+	return (b1);
 }

@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:37:15 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 14:21:57 by tblaase          ###   ########.fr       */
+/*   Created: 2021/06/21 18:37:26 by tblaase           #+#    #+#             */
+/*   Updated: 2021/07/06 13:41:05 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_push_swap(int **a, int **b)
-/*
-** read the input and create the two arrays from it
-** the given data is put into a, b stays empty
-*/
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
+	char				*c;
+	unsigned int		i;
+
+	if (!s)
+		return (0);
+	i = 0;
+	c = malloc(len + 1);
+	if (c == NULL)
+		return (0);
+	if (ft_strlen(s) < start)
+	{
+		c[i] = '\0';
+		return (c);
+	}
+	while (i < len)
+	{
+		c[i] = s[start];
+		i++;
+		start ++;
+	}
+	c[i] = '\0';
+	return (c);
 }
