@@ -68,7 +68,7 @@ char	*ft_itoa(int n)
 		if (n < 0)
 			i++;
 		str = malloc(i + 1);
-		if (str == '\0')
+		if (str == NULL)
 			return (0);
 		ft_standard(str, i, n);
 	}

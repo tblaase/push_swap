@@ -12,10 +12,16 @@
 
 #include "../push_swap.h"
 
-void	ft_sa(int **a)
+t_stack	*ft_sa(t_stack *stack_a)
 /*
 ** swap the first two elements on top of stack a
 ** do nothing if only one or no elements on stack
 */
 {
+	t_stack *temp;
+
+	temp = stack_a->next;
+	stack_a->next = temp->next;
+	temp->next = stack_a;
+	return (temp);
 }

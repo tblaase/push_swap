@@ -12,10 +12,21 @@
 
 #include "../push_swap.h"
 
-void	ft_pa(int **a)
+void	*ft_pa(t_stack *stack_a, t_stack *stack_b)
 /*
 ** take element from top of stack b and put it on top stack a
 ** do nothing if stack b is empty
 */
+
+// you have to use the adresses with & but it woesnt work as normal //////////////////
 {
+	t_stack	*temp;
+
+	if (stack_b)
+	{
+		temp = stack_b->next;
+		stack_b->next = stack_a;
+		stack_a = stack_b;
+		stack_b = temp;
+	}
 }

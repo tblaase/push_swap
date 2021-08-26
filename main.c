@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 /*
@@ -18,7 +19,9 @@ int	main(int argc, char **argv)
 */
 {
 	t_stack		*stack_a;
+	t_stack		*stack_b;
 	int			**input;
+	char		**args;
 
 	if (ft_input_error(argc, argv) == 1)
 	{
@@ -27,6 +30,18 @@ int	main(int argc, char **argv)
 	}
 	// input = ft_convert_array(argc, argv);
 	stack_a = ft_fill_list(argc, argv);
+	//stack_b = ft_fill_list(argc, argv);
+	printf("%s", "\nstacka1: ");
 	ft_display_list(stack_a);
+	//printf("%s", "\nstackb1: ");
+	//ft_display_list(stack_b);
+
+	ft_ra(&stack_a);
+
+	printf("%s", "\nstacka2: ");
+	ft_display_list(stack_a);
+	//printf("%s", "\nstackb2: ");
+	//ft_display_list(stack_b);
+	//printf("%c", '\n');
 	return (0);
 }

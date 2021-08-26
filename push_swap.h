@@ -28,17 +28,25 @@ typedef struct s_stack
 /*
 ** ACTIONS ******************************************************************
 */
-void	ft_sa(int **a);
-void	ft_sb(int **b);
-void	ft_ss(int **a, int **b);
-void	ft_pa(int **a);
-void	ft_pb(int **b);
-void	ft_ra(int **a);
+t_stack	*ft_sa(t_stack *stack_a);
+t_stack	*ft_sb(t_stack *stack_b);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+void	*ft_pa(t_stack *stack_a, t_stack *stack_b);
+void	*ft_pb(t_stack *stack_a, t_stack *stack_b);
+void	ft_ra(t_stack **stack_a);
 void	ft_rb(int **b);
 void	ft_rr(int **a, int **b);
 void	ft_rra(int **a);
 void	ft_rrb(int **b);
 void	ft_rrr(int **a, int **b);
+
+/*
+** HELPFUNCTION *************************************************************
+*/
+
+t_stack	*ft_lst_new(int content);
+void	ft_lst_add_back(t_stack **head, t_stack *new);
+
 /*
 ** MAINFUNCTIONS ************************************************************
 */
