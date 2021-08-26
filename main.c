@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 16:52:36 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/26 17:48:50 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	// input = ft_convert_array(argc, argv);
 	stack_a = ft_fill_list(argc, argv);
 	//stack_b = ft_fill_list(argc, argv);
 	printf("%s", "\nstacka1: ");
