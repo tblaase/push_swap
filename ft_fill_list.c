@@ -6,13 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:52:50 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 18:26:40 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/27 16:04:35 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 t_stack	*ft_fill_list(int argc, char **argv)
 /*

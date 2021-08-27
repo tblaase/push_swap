@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:31:18 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/19 18:00:01 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/27 13:26:42 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 ** do nothing if only one or no elements on stack
 */
 {
-	*stack_a = ft_sa(*stack_a);
-	*stack_b = ft_sb(*stack_b);
+	ft_sa(stack_a);
+	ft_sb(stack_b);
 }
