@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:45:35 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/27 13:44:17 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/28 15:55:22 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,7 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 ** last element becomes first
 */
 {
+	ft_rra(stack_a, 0);
+	ft_rrb(stack_b, 0);
+	write(1, "rrr\n", 4);
 }

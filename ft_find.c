@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_list.c                                  :+:      :+:    :+:   */
+/*   ft_find.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 14:42:54 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/20 18:03:38 by tblaase          ###   ########.fr       */
+/*   Created: 2021/08/28 18:57:32 by tblaase           #+#    #+#             */
+/*   Updated: 2021/08/28 20:03:59 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	ft_display_list(t_stack *stack)
+int	ft_find_smallest(t_stack **stack, int x)
 {
-	while (stack != NULL)
+	t_stack	*temp;
+
+	temp = *stack;
+	while (temp != NULL)
 	{
-		printf("\t: %d", stack->content);
-		stack = stack->next;
+		if (temp->content < x)
+			x = temp->content;
+		temp = temp->next;
 	}
+	return (x);
 }

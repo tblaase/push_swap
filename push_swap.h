@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/27 13:42:27 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/28 21:19:24 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ typedef struct s_stack
 ** ACTIONS ******************************************************************
 */
 
-void	ft_sa(t_stack **stack_a);
-void	ft_sb(t_stack **stack_b);
+void	ft_sa(t_stack **stack_a, int flag);
+void	ft_sb(t_stack **stack_b, int flag);
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
-void	ft_ra(t_stack **stack_a);
-void	ft_rb(t_stack **stack_b);
+void	ft_ra(t_stack **stack_a, int flag);
+void	ft_rb(t_stack **stack_b, int flag);
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);
-void	ft_rra(t_stack **stack_a);
-void	ft_rrb(t_stack **stack_b);
+void	ft_rra(t_stack **stack_a, int flag);
+void	ft_rrb(t_stack **stack_b, int flag);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /*
@@ -48,15 +48,18 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 t_stack	*ft_lst_new(int content);
 void	ft_lst_add_back(t_stack **head, t_stack *new);
+int		ft_find_biggest(t_stack **stack);
 
 /*
-** MAINFUNCTIONS ************************************************************
+** FUNCTIONS ************************************************************
 */
 
 int		ft_input_error(int argc, char **argv);
 t_stack	*ft_fill_list(int argc, char **argv);
-void	ft_free_all(int **a, int **b);
 void	ft_push_swap(int **a, int **b);
+void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_three(t_stack **stack_a);
+void	ft_sort_small(int argc, t_stack **stack_a, t_stack **stack_b, int flag);
 
 /*
 ** TESTFUNCTIONS ***********************************************************

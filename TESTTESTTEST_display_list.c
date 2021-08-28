@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   TESTTESTTEST_display_list.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 17:31:18 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/28 15:55:52 by tblaase          ###   ########.fr       */
+/*   Created: 2021/08/20 14:42:54 by tblaase           #+#    #+#             */
+/*   Updated: 2021/08/28 21:51:47 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
+#include <stdio.h>
 
-void	ft_ss(t_stack **stack_a, t_stack **stack_b)
-/*
-** swap the first two elements on top of stack a and stack b
-** do nothing if only one or no elements on stack
-*/
+void	ft_display_list(t_stack *stack)
 {
-	ft_sa(stack_a, 0);
-	ft_sb(stack_b, 0);
-	write(1, "ss\n", 3);
+	while (stack != NULL)
+	{
+		printf("\t: %d", stack->content);
+		stack = stack->next;
+	}
+	printf("%s", "\n");
 }
