@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/28 21:19:24 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/29 23:07:03 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,18 @@
 # include "libft/libft.h"
 
 /*
-** LINKED LIST FOR STACK a AND STACK b
+** LINKED LIST FOR STACK a AND STACK b ******************************************
 */
 
 typedef struct s_stack
 {
 	int				content;
+	int				swap;
 	struct s_stack	*next;
 }					t_stack;
 
 /*
-** ACTIONS ******************************************************************
+** ACTIONS **********************************************************************
 */
 
 void	ft_sa(t_stack **stack_a, int flag);
@@ -43,27 +44,34 @@ void	ft_rrb(t_stack **stack_b, int flag);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /*
-** HELPFUNCTION *************************************************************
+** HELPFUNCTION *****************************************************************
 */
 
 t_stack	*ft_lst_new(int content);
 void	ft_lst_add_back(t_stack **head, t_stack *new);
-int		ft_find_biggest(t_stack **stack);
+void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
+// void	ft_push_biggest_b(t_stack **stack_a, t_stack **stack_b);
 
 /*
-** FUNCTIONS ************************************************************
+** SORT_FUNCTIONS ***************************************************************
+*/
+
+void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_three(t_stack **stack_a);
+void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
+
+/*
+** MAIN_FUNCTIONS ***************************************************************
 */
 
 int		ft_input_error(int argc, char **argv);
 t_stack	*ft_fill_list(int argc, char **argv);
 void	ft_push_swap(int **a, int **b);
-void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b);
-void	ft_sort_three(t_stack **stack_a);
-void	ft_sort_small(int argc, t_stack **stack_a, t_stack **stack_b, int flag);
 
 /*
-** TESTFUNCTIONS ***********************************************************
+** TESTFUNCTIONS ****************************************************************
 */
+
 void	ft_display_list(t_stack *stack);
 
 #endif
