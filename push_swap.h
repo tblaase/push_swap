@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/29 23:07:03 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/30 20:39:42 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_three(t_stack **stack_a);
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
+void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b, int p_max);
 
 /*
 ** MAIN_FUNCTIONS ***************************************************************

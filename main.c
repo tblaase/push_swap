@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/28 21:52:22 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/30 20:24:38 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
-	int			**input;
-	char		**args;
 
 	if (ft_input_error(argc, argv) == 1)
 	{

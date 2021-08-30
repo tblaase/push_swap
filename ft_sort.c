@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:40:58 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/29 21:42:23 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/30 20:52:33 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ static void	ft_small_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 		ft_sort_five(stack_a, stack_b);
 }
 
-static void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
-/*
-** check if sorted or backwards sorted
-** if backwards sorted until a->next==Null(rra, pb)then until b==NULL(pa)
-** for 500 elements 1497 actions for 100 elements 297 actions
-*/
-{
-}
-
 void	ft_push_half(int argc, t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
@@ -50,8 +41,8 @@ void	ft_push_half(int argc, t_stack **stack_a, t_stack **stack_b)
 
 void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 {
-	if (argc <= 100)
+	if (argc <= 5)
 		ft_small_sort(argc, stack_a, stack_b);
 	else
-		ft_big_sort(argc, stack_a, stack_b);
+		ft_big_sort(argc, stack_a, stack_b, 2);
 }
