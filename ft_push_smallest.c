@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 20:11:46 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/30 20:23:54 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 18:41:38 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_push_smallest_a_help(t_stack **stack_a, t_stack **stack_b,
 	if (n < 3)
 	{
 		i = 0;
-		while (i < n)//////////
+		while (i < n)
 		{
 			ft_ra(stack_a, 1);
 			i++;
@@ -26,7 +26,7 @@ static void	ft_push_smallest_a_help(t_stack **stack_a, t_stack **stack_b,
 	}
 	else
 	{
-		while (i >= n)///////////
+		while (i >= n)
 		{
 			ft_rra(stack_a, 1);
 			i--;

@@ -6,35 +6,39 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 19:50:30 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/30 21:48:04 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 21:27:07 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b, int p_max)
-/*
-** check if sorted or backwards sorted
-** if backwards sorted until a->next==Null(rra, pb)then until b==NULL(pa)
-** for 500 elements 1497 actions for 100 elements 297 actions
-*/
+void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
+/* this function will initialize the big sort
+** here i sort pairs of numbers
+** then sort 2 pairs together
+** when this function is finished all data is on stack_b
+** after that i call a function to sort stack_b back to stack_a */
 {
-	int	p_count;
-
 	while (*stack_a != NULL)
 	{
-		p_count = 0;
-		while (p_count < p_max)
-		{
-			ft_pb(stack_a, stack_b);
-			p_count++;
-		}
-		p_count = 0;
-		if (*stack_a && (*stack_a)->content < (*stack_a)->next->content && p_max == 2)
+		if (*stack_a && (*stack_a)->content > (*stack_a)->next->content)
 			ft_sa(stack_a, 1);
-		if ((*stack_b)->content < (*stack_b)->next->content && p_max ==2)
-			ft_sb(stack_b, 1);
-		while (p_count < p_max && *stack_a != NULL)
+		ft_pb(stack_a, stack_b);
+		ft_pb(stack_a, stack_b);
+	}
+	ft_big_sort_b(argc, stack_a, stack_b);
+}
+
+void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b)
+/* this function will sort presorted data from stack_a to stack_b
+** stack_a = NULL when finished */
+{
+	while (*stack_a != NULL)
+	{
+		while ((*stack_a)->content < (*stack_a)->next->content)
+			ft_pb(stack_a, stack_b);
+		ft_pb(stack_a, stack_b);
+		while (*stack_a != NULL)
 		{
 			if ((*stack_a)->content < (*stack_b)->content
 				&& (*stack_b)->swap == 0)
@@ -44,28 +48,75 @@ void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b, int p_max)
 			}
 			else
 			{
-				p_count++;
 				ft_pb(stack_a, stack_b);
 				(*stack_b)->swap++;
 				ft_rb(stack_b, 1);
 			}
 		}
-		while ((*stack_b)->swap == 0)
+		while ((*stack_b)->next->swap == 0)
 		{
 			(*stack_b)->swap++;
 			ft_rb(stack_b, 1);
 		}
 	}
-	if (p_max <= (argc / 2))
+	ft_big_sort_b(argc, stack_a, stack_b);
+}
+
+void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
+/* this function will sort presorted data from stack_b to stack_a
+** stack_b = NULL when finished */
+{
+	t_stack *temp = NULL;
+
+	while (*stack_b != NULL)
 	{
-		while (*stack_b != NULL)
+		while ((*stack_b)->content > (*stack_b)->next->content)
 		{
-			// if ((*stack_b)->next != NULL)
-			// 	ft_rrb(stack_b, 1); // rrb creates infinite new lists if only one in list!!!!!
 			(*stack_b)->swap = 0;
 			ft_pa(stack_a, stack_b);
 		}
-		p_max = p_max * 2;
-		ft_big_sort(argc, stack_a, stack_b, p_max);
+		(*stack_b)->swap = 0;
+		ft_pa(stack_a, stack_b);
+		ft_rrb(stack_b, 1);
+		while (*stack_b != NULL && (*stack_a)->swap == 0) // work on that statement, maybe without the swap flag in it, swap flag then later in that function inside while loop maybe, this whileloop then takes te remainder of the stack and pushes it?
+		{
+			if ((*stack_b)->content < (*stack_a)->content)
+			{
+				ft_pa(stack_a, stack_b);
+				(*stack_a)->swap++;
+				ft_ra(stack_a, 1);
+				ft_rrb(stack_b, 1);
+				ft_lst_copy(stack_b, &temp);
+				ft_rrb(&temp, 0);
+				if ((temp)->content < (*stack_b)->content)
+					break ;
+			}
+			else// if ((*stack_a)->swap == 0) ?? this will probably not solve my problem, TEST IT
+			{
+				(*stack_a)->swap++;
+				ft_ra(stack_a, 1);
+			}
+		}
+		while (*stack_b != NULL) // this while loop needs to disappear!!!!!!! alot of errors come with this loop, remainder of stack should be dealt with in line 81 loop
+		{
+			ft_pa(stack_a, stack_b);
+			(*stack_a)->swap++;
+			ft_ra(stack_a, 1);
+			ft_rrb(stack_b, 1); //need condition for this //////////// maybe with counter again
+			if (*stack_b && (*stack_b)->next != NULL)
+			{
+				ft_lst_copy(stack_b, &temp);
+				ft_rrb(&temp, 0);
+				if ((temp)->content < (*stack_b)->content)
+					break ;
+			}
+		}
+		while ((*stack_a)->swap == 0) // this loop has to stay to make stack ready for next push
+		{
+			(*stack_a)->swap++;
+			ft_ra(stack_a, 1);
+		}
 	}
+	// insert test if_sorted function here ///////////////////////////////////////////
+	ft_big_sort_a(argc, stack_a, stack_b);
 }

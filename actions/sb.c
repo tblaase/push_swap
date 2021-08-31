@@ -6,17 +6,15 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:31:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/30 20:23:32 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 19:01:38 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 void	ft_sb(t_stack **stack_b, int flag)
-/*
-** swap the first two elements on top of stack b
-** do nothing if only one or no elements on stack
-*/
+/* swap the first two elements on top of stack b
+** do nothing if only one or no elements on stack */
 {
 	t_stack	*temp;
 

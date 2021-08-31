@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/30 20:39:42 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 20:30:52 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 t_stack	*ft_lst_new(int content);
 void	ft_lst_add_back(t_stack **head, t_stack *new);
+void	ft_lst_copy(t_stack **input, t_stack **output);
 void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
 // void	ft_push_biggest_b(t_stack **stack_a, t_stack **stack_b);
 
@@ -59,8 +60,9 @@ void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_three(t_stack **stack_a);
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
-void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b, int p_max);
-
+void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b);
+void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b);
+void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b);
 /*
 ** MAIN_FUNCTIONS ***************************************************************
 */

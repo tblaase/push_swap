@@ -6,17 +6,15 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:42:33 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/30 20:22:52 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 18:38:41 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 void	ft_pa(t_stack **stack_a, t_stack **stack_b)
-/*
-** take element from top of stack b and put it on top stack a
-** do nothing if stack b is empty
-*/
+/* take element from top of stack b and put it on top stack a
+** do nothing if stack b is empty */
 
 {
 	t_stack	*temp;

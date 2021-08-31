@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst_functions.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
+/*   Updated: 2021/08/31 20:43:56 by tblaase          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack	*ft_lst_new(int content)
-/*
-** same function as libft function but different struct it uses
-*/
+/* same function as libft function but different struct it uses */
 {
 	t_stack	*head;
 
@@ -17,9 +27,7 @@ t_stack	*ft_lst_new(int content)
 }
 
 void	ft_lst_add_back(t_stack **head, t_stack *new)
-/*
-** same function as libft function but different struct it uses
-*/
+/* same function as libft function but different struct it uses */
 {
 	t_stack	*current;
 
@@ -34,14 +42,31 @@ void	ft_lst_add_back(t_stack **head, t_stack *new)
 	}
 }
 
+void	ft_lst_copy(t_stack **input, t_stack **output)
+/* will copy the contents of a list into a new list */
+{
+	t_stack	*temp;
+	t_stack	*current;
+
+	temp = *input;
+	*output = ft_lst_new(temp->content);
+	current = *output;
+	while (temp != NULL)
+	{
+
+		temp = temp->next;
+		current->next = ft_lst_new(temp->content);
+		current = current->next;
+		if (temp->next == NULL)
+			break ;
+	}
+}
+
 t_stack	*ft_fill_list(int argc, char **argv)
-/*
-** this function will take an array of strings
-** translate these strings into integers
-** and create a linked list off of that array
+/* this function will take an array of strings translate into integers
+** and create a linked list off of that
 ** every number will be stored in one struct
-** first number of the array will be the first struct in linked list
-*/
+** first number of the array will be the first struct in linked list */
 {
 	int		i;
 	t_stack	*head;

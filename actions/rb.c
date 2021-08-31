@@ -6,17 +6,15 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:44:18 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/30 20:23:07 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 19:01:05 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 void	ft_rb(t_stack **stack_b, int flag)
-/*
-** shift up all elements of stack b by one
-** first element becomes last
-*/
+/* shift up all elements of stack b by one
+** first element becomes last */
 {
 	t_stack	*temp;
 
