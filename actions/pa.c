@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:42:33 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/31 18:38:41 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 22:06:39 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 		(*stack_b)->next = *stack_a;
 		*stack_a = *stack_b;
 		*stack_b = temp;
-		write(1, "pa\n", 3);
+		// write(1, "pa\n", 3);
+		write(1, "pa ", 3);
 	}
 }

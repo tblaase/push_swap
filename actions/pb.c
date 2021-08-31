@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:43:25 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/31 19:00:53 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 22:06:54 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 		(*stack_a)->next = *stack_b;
 		*stack_b = *stack_a;
 		*stack_a = temp;
-		write(1, "pb\n", 3);
+		// write(1, "pb\n", 3);
+		write(1, "pb ", 3);
 	}
 }

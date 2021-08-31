@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:31:18 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/31 19:01:43 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/08/31 22:08:57 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_sa(stack_a, 0);
 	ft_sb(stack_b, 0);
-	write(1, "ss\n", 3);
+	// write(1, "ss\n", 3);
+	write(1, "ss ", 3);
 }
