@@ -6,13 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:40:58 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 12:04:26 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 21:23:00 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	ft_small_sort(int argc, t_stack **stack_a, t_stack **stack_b)
+/* will determine which small_sort function to call */
 {
 	if (argc == 2)
 	{
@@ -28,6 +29,7 @@ static void	ft_small_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 }
 
 void	ft_push_half(int argc, t_stack **stack_a, t_stack **stack_b)
+/* will push half of stack_a to stack_b */
 {
 	int	i;
 
@@ -40,6 +42,7 @@ void	ft_push_half(int argc, t_stack **stack_a, t_stack **stack_b)
 }
 
 void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b)
+/* will determine if small_sort or big_sort is to be called */
 {
 	if (argc <= 5)
 		ft_small_sort(argc, stack_a, stack_b);

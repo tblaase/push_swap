@@ -6,13 +6,15 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:32:51 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/28 16:48:45 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 21:14:03 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	ft_doubles(unsigned int *numbers, char **argv, int j)
+/* this function will **argv for doubles
+** if double is found return is 1 */
 {
 	int					number;
 	unsigned int		u;
@@ -35,6 +37,8 @@ int	ft_doubles(unsigned int *numbers, char **argv, int j)
 }
 
 int	ft_input_error(int argc, char **argv)
+/* this function will scan **argv for non digit values and doubles
+** if double or non digit found return is 1 */
 {
 	int					i;
 	int					j;

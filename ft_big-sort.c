@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 19:50:30 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 19:11:25 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 21:06:04 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 /* this function will initialize the big sort
-** here i sort pairs of numbers
-** then sort 2 pairs together
-** when this function is finished all data is on stack_b
-** after that i call a function to sort stack_b back to stack_a */
+** here i sort pairs of numbers together, bigger number on top */
 {
 	while (*stack_a != NULL)
 	{
@@ -32,6 +29,7 @@ void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 
 void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b)
 /* this function will sort presorted data from stack_a to stack_b
+** biggest number on top of stack
 ** stack_a = NULL when finished */
 {
 	t_stack	*temp_one;
@@ -52,7 +50,7 @@ void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b)
 		{
 			ft_lst_copy(stack_a, &temp_one);
 			ft_rra(&temp_one, 0);
-			// ft_rra(stack_a, 1);// maybe get into the if loop with temp and rra inside the if statement
+			// ft_rra(stack_a, 1);// is better when inside the if statement
 			if ((*stack_b)->swap != 0 || ((*stack_b)->content < temp_one->content))
 			{
 				ft_rra(stack_a, 1); // instead of line 53
@@ -67,7 +65,7 @@ void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b)
 							ft_pb(stack_a, stack_b);
 						else
 						{
-							while ((*stack_b)->swap == 0 || ((*stack_a)->content > (*stack_b)->content))
+							while ((*stack_b)->swap == 0 || ((*stack_a)->content > (*stack_b)->content)) // this is probably causing a lot of trouble /////////////////////////////
 							{
 								(*stack_b)->swap++;
 								ft_rb(stack_b, 1);
@@ -109,6 +107,7 @@ void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b)
 
 void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 /* this function will sort presorted data from stack_b to stack_a
+** smallest number on top of stack
 ** stack_b = NULL when finished */
 {
 	t_stack	*temp;

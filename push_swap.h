@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 17:41:03 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 21:24:53 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_rrb(t_stack **stack_b, int flag);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /*
-** HELPFUNCTION *****************************************************************
+** LISTFUNCTIONS *****************************************************************
 */
 
 t_stack	*ft_lst_new(int content);
@@ -76,6 +76,6 @@ int		ft_if_sorted(int argc, t_stack **stack);
 ** TESTFUNCTIONS ****************************************************************
 */
 
-void	ft_display_list(t_stack *stack);
+void	ft_display_list(t_stack *stack); // remove before submitting!!!!!!!!!!!!
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 18:46:35 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 21:07:55 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,8 @@ void	ft_lst_copy(t_stack **input, t_stack **output)
 
 t_stack	*ft_fill_list(int argc, char **argv)
 /* this function will take an array of strings translate into integers
-** and create a linked list off of that
-** every number will be stored in one struct
-** first number of the array will be the first struct in linked list */
+** first number of the array will be the first struct in linked list/
+** on top of the stack */
 {
 	int		i;
 	t_stack	*head;

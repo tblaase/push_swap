@@ -6,17 +6,19 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 17:42:38 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 21:25:23 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //
-#include <fcntl.h>
-#include <stdio.h>
+// #include <fcntl.h>
+// #include <stdio.h>
 //
 int	main(int argc, char **argv)
-/* get the input from the user and create a linked list from it */
+/* get the input from the user
+** create linked list off of that
+** sort that linked list by ascending oreder */
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
@@ -27,7 +29,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	argc -= 1;
-	//
+	// for testing purpose only /////////////////////
 	// argc = 5;
 	// int i = 1;
 	// int fd = open("input.txt", O_RDONLY);
