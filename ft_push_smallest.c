@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 20:11:46 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/31 18:41:38 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 11:37:36 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*temp;
 
 	i = 0;
+	n = 0;
 	temp = *stack_a;
 	x = temp->content;
 	while (temp->next != NULL)
@@ -54,7 +55,8 @@ void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b)
 			x = temp->content;
 		}
 	}
-	ft_push_smallest_a_help(stack_a, stack_b, i, n);
+	if (n != 0)
+		ft_push_smallest_a_help(stack_a, stack_b, i, n);
 	ft_pb(stack_a, stack_b);
 }
 
