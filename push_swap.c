@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 12:22:31 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 17:42:38 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	main(int argc, char **argv)
 	//
 	stack_a = ft_fill_list(argc, argv);
 	ft_display_list(stack_a);
+	if (ft_if_sorted(argc, &stack_a) == 1)
+		return (0);
 	ft_sort(argc, &stack_a, &stack_b);
 	ft_display_list(stack_a);
 	// ft_display_list(stack_b);

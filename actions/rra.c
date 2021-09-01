@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:45:04 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/31 22:07:59 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 19:20:12 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	ft_rra(t_stack **stack_a, int flag)
 	ft_lst_add_back(&new, *stack_a);
 	*stack_a = new;
 	if (flag == 1)
-		write(1, "rra ", 4);// write(1, "rra\n", 4);
+		/*write(1, "rra ", 4);// */write(1, "rra\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/08/31 20:30:52 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/01 17:41:03 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b);
 
 int		ft_input_error(int argc, char **argv);
 t_stack	*ft_fill_list(int argc, char **argv);
-void	ft_push_swap(int **a, int **b);
+int		ft_if_sorted(int argc, t_stack **stack);
+// void	ft_push_swap(int **a, int **b);
 
 /*
 ** TESTFUNCTIONS ****************************************************************
