@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:45:20 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 19:20:21 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/03 20:10:34 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_rrb(t_stack **stack_b, int flag)
 	while (temp->next != NULL)
 		temp = temp->next;
 	new = ft_lst_new(temp->content);
+	new->swap = temp->swap;
 	temp = *stack_b;
 	while (temp->next != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:44:18 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 19:19:59 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/03 20:45:25 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_rb(t_stack **stack_b, int flag)
 {
 	t_stack	*temp;
 
+	if ((*stack_b)->next == NULL)
+		return ;
 	temp = (*stack_b)->next;
 	(*stack_b)->next = NULL;
 	ft_lst_add_back(&temp, *stack_b);
