@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/03 20:00:38 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/04 13:56:58 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void	ft_lst_copy(t_stack **input, t_stack **output)
 	t_stack	*temp;
 	t_stack	*current;
 
+	/* *output = NULL;
+	if (*input == NULL)
+		return ; */
 	temp = *input;
 	*output = ft_lst_new(temp->content);
 	(*output)->swap = temp->swap;

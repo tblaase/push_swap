@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:24:53 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/04 11:45:18 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "libft/libft.h"
 
 /*
-** LINKED LIST FOR STACK a AND STACK b ******************************************
+** STRUCT FOR LINKED LIST *******************************************************
 */
 
 typedef struct s_stack
@@ -44,14 +44,14 @@ void	ft_rrb(t_stack **stack_b, int flag);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /*
-** LISTFUNCTIONS *****************************************************************
+** LISTFUNCTIONS ****************************************************************
 */
 
 t_stack	*ft_lst_new(int content);
+t_stack	*ft_fill_list(int argc, char **argv);
 void	ft_lst_add_back(t_stack **head, t_stack *new);
 void	ft_lst_copy(t_stack **input, t_stack **output);
 void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
-// void	ft_push_biggest_b(t_stack **stack_a, t_stack **stack_b);
 
 /*
 ** SORT_FUNCTIONS ***************************************************************
@@ -63,14 +63,13 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b);
+
 /*
 ** MAIN_FUNCTIONS ***************************************************************
 */
 
 int		ft_input_error(int argc, char **argv);
-t_stack	*ft_fill_list(int argc, char **argv);
 int		ft_if_sorted(int argc, t_stack **stack);
-// void	ft_push_swap(int **a, int **b);
 
 /*
 ** TESTFUNCTIONS ****************************************************************
