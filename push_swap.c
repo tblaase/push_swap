@@ -6,14 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:25:23 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/05 18:01:57 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //
 // #include <fcntl.h>
-// #include <stdio.h>
+#include <stdio.h>
 //
 int	main(int argc, char **argv)
 /* get the input from the user
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	}
 	argc -= 1;
 	// for testing purpose only /////////////////////
-	// argc = 5;
+	// argc = 4;
 	// int i = 1;
 	// int fd = open("input.txt", O_RDONLY);
 	// char *buff;
@@ -44,11 +44,15 @@ int	main(int argc, char **argv)
 	// 	argv[x] = ft_strdup(buff);
 	// 	x++;
 	// }
+	// stack_a = ft_fill_list(argc, argv);
+	// stack_b = ft_fill_list(4, (argv + 4));
 	//
 	stack_a = ft_fill_list(argc, argv);
 	ft_display_list(stack_a);
-	if (ft_if_sorted(argc, &stack_a) == 1)
+	// ft_display_list(stack_b);
+	if (ft_if_sorted_a(argc, &stack_a) == 1)
 		return (0);
+	// ft_big_sort_a(argc, &stack_a, &stack_b);
 	ft_sort(argc, &stack_a, &stack_b);
 	ft_display_list(stack_a);
 	// ft_display_list(stack_b);
@@ -57,5 +61,10 @@ int	main(int argc, char **argv)
 	// i++;
 	// }
 	//
+	// system("leaks push_swap");
+	// fscanf(stdin, "c");
 	return (0);
 }
+
+
+///////////////// merge 2 stacks into the top stack, then push next over, might be possible with i counter ? /////////

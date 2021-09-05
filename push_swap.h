@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/04 11:45:18 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/05 17:01:58 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,28 @@ void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_three(t_stack **stack_a);
+void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b);
 
 /*
-** MAIN_FUNCTIONS ***************************************************************
+** HELP_FUNCTIONS ***************************************************************
 */
 
 int		ft_input_error(int argc, char **argv);
-int		ft_if_sorted(int argc, t_stack **stack);
+int		ft_one_stack_left_a(t_stack **stack);
+int		ft_one_stack_left_b(t_stack **stack);
+int		ft_if_sorted_a(int argc, t_stack **stack);
+int		ft_if_sorted_b(int argc, t_stack **stack);
+void	ft_set_swap(t_stack **stack, int x);
+
+/*
+** MAIN_FUNCTIONS ***************************************************************
+*/
+
+
 
 /*
 ** TESTFUNCTIONS ****************************************************************

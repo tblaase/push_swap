@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_if_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_one_stack_left_b.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 17:35:30 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:06:49 by tblaase          ###   ########.fr       */
+/*   Created: 2021/09/05 17:01:21 by tblaase           #+#    #+#             */
+/*   Updated: 2021/09/05 17:04:10 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_if_sorted(int argc, t_stack **stack)
-/* this function returns 1 if the stack is sorted corretly, 0 if not */
+int	ft_one_stack_left_b(t_stack **stack)
+/* this function returns 1 if only one sorted stack is left, returns 0 if not
+** returns -1 if stack == NULL */
 {
 	t_stack	*temp;
 	int		i;
+	int		len;
 
-	i = 0;
+	if (*stack == NULL)
+		return (-1);
+	len = 0;
 	temp = *stack;
 	while (temp)
 	{
-		if (temp->next != NULL && temp->content < temp->next->content)
+		if (temp->next == NULL)
 		{
-			temp = temp->next;
-			i++;
-		}
-		else if (temp->next == NULL)
-		{
-			i++;
-			if (i == argc)
-				return (1);
-		}
-		else
+			len++;
 			break ;
+		}
+		temp = temp->next;
+		len++;
 	}
-	return (0);
+	return (ft_if_sorted_b(len, stack));
 }

@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TESTTESTTEST_display_list.c                        :+:      :+:    :+:   */
+/*   ft_if_sorted_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 14:42:54 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 15:32:28 by tblaase          ###   ########.fr       */
+/*   Created: 2021/09/05 16:59:03 by tblaase           #+#    #+#             */
+/*   Updated: 2021/09/05 17:00:41 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	ft_display_list(t_stack *stack)
+int	ft_if_sorted_b(int argc, t_stack **stack)
+/* this function returns 1 if the stack is sorted corretly, 0 if not */
 {
-	while (stack != NULL)
+	t_stack	*temp;
+	int		i;
+
+	i = 0;
+	temp = *stack;
+	while (temp)
 	{
-		printf("\t: %d", stack->content);
-		stack = stack->next;
+		if (temp->next != NULL && temp->content > temp->next->content)
+		{
+			temp = temp->next;
+			i++;
+		}
+		else if (temp->next == NULL)
+		{
+			i++;
+			if (i == argc)
+				return (1);
+		}
+		else
+			break ;
 	}
-	printf("\n");
+	return (0);
 }

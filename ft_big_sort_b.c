@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 19:50:30 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/04 17:34:31 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/05 17:56:56 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,26 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 
 	temp_one = NULL;
 	temp_two = NULL;
+	i = 0;
 	while (*stack_b != NULL)
 	{
-		i = 0;
-		while ((*stack_b)->next != NULL && (*stack_b)->content > (*stack_b)->next->content)
+		if (i != 0 || *stack_a == NULL)
 		{
+			while ((*stack_b)->next != NULL
+				&& (*stack_b)->content > (*stack_b)->next->content)
+			{
+				(*stack_b)->swap = 0;
+				ft_pa(stack_a, stack_b);
+			}
 			(*stack_b)->swap = 0;
 			ft_pa(stack_a, stack_b);
+			if (ft_one_stack_left_b(stack_b) == 1)// &&ft_one_stack_a(stack_a == 0) maybe will fix it
+			{
+				ft_set_swap(stack_b, 0);
+				break ;
+			}
 		}
-		(*stack_b)->swap = 0;
-		ft_pa(stack_a, stack_b);
+		i = 0;
 		if (*stack_b == NULL)
 			break ;
 		if ((*stack_b)->next == NULL)
@@ -45,7 +55,8 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 			ft_pa(stack_a, stack_b);
 			ft_lst_copy(stack_a, &temp_one);
 			ft_rra(&temp_one, 0);
-			if ((*stack_a)->content < (*stack_a)->next->content && temp_one->content > (*stack_a)->content)
+			if ((*stack_a)->content < (*stack_a)->next->content
+				&& temp_one->content > (*stack_a)->content)
 				(*stack_a)->swap = 1;
 			else
 			{
@@ -69,8 +80,12 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 				ft_lst_copy(stack_a, &temp_two);
 				ft_rra(&temp_two, 0);
 				if (temp_two->content > temp_one->content && temp_two->swap != 0)
+				{
+					i++;
 					break ;
+				}
 			}
+			i++;
 			if ((*stack_a)->swap == 0 && temp_one->content < (*stack_a)->content)
 			{
 				ft_rrb(stack_b, 1);
@@ -109,7 +124,7 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 						ft_rrb(&temp_two, 0);
 					}
 				}
-				ft_rrb(stack_b, 1);
+				ft_rrb(stack_b, 1); // not protected, moight cause problems
 				ft_pa(stack_a, stack_b);
 				(*stack_a)->swap = 1;
 				ft_ra(stack_a, 1);
@@ -124,11 +139,10 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 				ft_rrb(&temp_one, 0);
 				ft_lst_copy(&temp_one, &temp_two);
 				ft_rrb(&temp_two, 0);
-			i++;
 		}
 		// ft_free(&temp_one);
 		// ft_free(&temp_two);
-		if (*stack_b != NULL)
+		if (*stack_b != NULL) //will prepare for the next iteration of the while loop
 		{
 			// ft_free(&temp_one);
 			// ft_free(&temp_two);
@@ -142,7 +156,8 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 		}
 		if (*stack_b != NULL && ((*stack_b)->next == NULL || temp_one->content > temp_two->content))
 		{
-			while ((*stack_a)->content < temp_one->content && (*stack_a)->swap == 0)
+			while ((*stack_a)->content < temp_one->content
+				&& (*stack_a)->swap == 0)
 			{
 				(*stack_a)->swap = 1;
 				ft_ra(stack_a, 1);
@@ -151,14 +166,30 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b)
 			ft_pa(stack_a, stack_b);
 			(*stack_a)->swap = 0;
 		}
-		while ((*stack_a)->swap == 0)
+		while ((*stack_a)->swap == 0) // think of doing this move after the biggest while loop again to reduce moves ////////////////// IMPROVEMENT
 		{
 			(*stack_a)->swap = 1;
 			ft_ra(stack_a, 1);
 		}
+		if (ft_one_stack_left_b(stack_b) == 1) // &&ft_one_stack_a(stack_a == 0) maybe will fix it
+		{
+			// if (*stack_a == NULL)
+			// {
+			// 	while (*stack_b != NULL)
+				// 	ft_pa(stack_a, stack_b);
+				// break ;
+			// }
+			ft_set_swap(stack_b, 0);
+			break ;
+		}
 	}
+	while ((*stack_a)->swap == 0) //TESTTESTTEST
+	{
+		(*stack_a)->swap = 1;
+		ft_ra(stack_a, 1);
+	} //TESTTESTTEST
 	// ft_free(&temp_one);
-	if (ft_if_sorted(argc, stack_a) == 1 && *stack_b == NULL)
+	if (ft_if_sorted_a(argc, stack_a) == 1 && *stack_b == NULL)
 		return ;
 	ft_big_sort_a(argc, stack_a, stack_b);
 }

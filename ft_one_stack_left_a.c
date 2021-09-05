@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TESTTESTTEST_display_list.c                        :+:      :+:    :+:   */
+/*   ft_one_stack_left_a.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 14:42:54 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 15:32:28 by tblaase          ###   ########.fr       */
+/*   Created: 2021/09/05 14:32:14 by tblaase           #+#    #+#             */
+/*   Updated: 2021/09/05 17:04:04 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	ft_display_list(t_stack *stack)
+int	ft_one_stack_left_a(t_stack **stack)
+/* this function returns 1 if only one sorted stack is left, returns 0 if not
+** returns -1 if stack == NULL */
 {
-	while (stack != NULL)
+	t_stack	*temp;
+	int		i;
+	int		len;
+
+	if (*stack == NULL)
+		return (-1);
+	len = 0;
+	temp = *stack;
+	while (temp)
 	{
-		printf("\t: %d", stack->content);
-		stack = stack->next;
+		if (temp->next == NULL)
+		{
+			len++;
+			break ;
+		}
+		temp = temp->next;
+		len++;
 	}
-	printf("\n");
+	return (ft_if_sorted_a(len, stack));
 }

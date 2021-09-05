@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TESTTESTTEST_display_list.c                        :+:      :+:    :+:   */
+/*   ft_set_swap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 14:42:54 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 15:32:28 by tblaase          ###   ########.fr       */
+/*   Created: 2021/09/05 16:34:03 by tblaase           #+#    #+#             */
+/*   Updated: 2021/09/05 16:38:56 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	ft_display_list(t_stack *stack)
+void	ft_set_swap(t_stack **stack, int x)
+/* will set all swap values of linked list stack to value of x
+** does nothing if stack == NULL */
 {
-	while (stack != NULL)
+	t_stack	*temp;
+
+	temp = *stack;
+	while (temp != NULL)
 	{
-		printf("\t: %d", stack->content);
-		stack = stack->next;
+		if (temp->next == NULL)
+		{
+			temp->swap = x;
+			break ;
+		}
+		temp->swap = x;
+		temp = temp->next;
 	}
-	printf("\n");
 }
