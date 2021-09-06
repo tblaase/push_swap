@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:32:51 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:14:03 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/06 16:47:27 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_doubles(unsigned int *numbers, char **argv, int j)
 	return (0);
 }
 
-int	ft_input_error(int argc, char **argv)
+int	ft_input_error(char **argv)
 /* this function will scan **argv for non digit values and doubles
 ** if double or non digit found return is 1 */
 {

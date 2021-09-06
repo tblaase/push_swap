@@ -6,14 +6,15 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 20:11:46 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:19:39 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/06 16:51:00 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	ft_push_smallest_a_help(t_stack **stack_a, int i, int n)
-/* this will swap the found value to the top of the stack_a in the shortest way */
+/* this will swap the found value to the top of the stack_a
+** in the shortest way */
 {
 	if (n < 3)
 	{

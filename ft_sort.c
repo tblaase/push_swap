@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:40:58 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 14:51:18 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/06 16:49:23 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,6 @@ static void	ft_small_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 		ft_sort_four(stack_a, stack_b);
 	else if (argc == 5)
 		ft_sort_five(stack_a, stack_b);
-}
-
-void	ft_push_half(int argc, t_stack **stack_a, t_stack **stack_b)
-/* will push half of stack_a to stack_b */
-{
-	int	i;
-
-	i = 0;
-	while (i < (argc / 2))
-	{
-		ft_pb(stack_a, stack_b);
-		i++;
-	}
 }
 
 void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b)

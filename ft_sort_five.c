@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:46:12 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:18:31 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/06 16:47:08 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 /* this function will sort by ascending order into stack_a
 ** only works if there is 5 numbers */
 {
-	int		a;
-	int		b;
-	int		x;
-
 	ft_push_smallest_a(stack_a, stack_b);
 	ft_push_smallest_a(stack_a, stack_b);
 	ft_sort_three(stack_a);

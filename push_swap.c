@@ -6,14 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 18:01:57 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/06 16:48:00 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //
 // #include <fcntl.h>
-#include <stdio.h>
+// #include <stdio.h>
 //
 int	main(int argc, char **argv)
 /* get the input from the user
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 
-	if (ft_input_error(argc, argv) == 1)
+	if (ft_input_error(argv) == 1)
 	{
 		write(1, "Error\n", 6);
 		return (1);
@@ -65,6 +65,3 @@ int	main(int argc, char **argv)
 	// fscanf(stdin, "c");
 	return (0);
 }
-
-
-///////////////// merge 2 stacks into the top stack, then push next over, might be possible with i counter ? /////////

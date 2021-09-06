@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 17:01:58 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/06 16:47:36 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,18 @@ void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b);
 ** HELP_FUNCTIONS ***************************************************************
 */
 
-int		ft_input_error(int argc, char **argv);
+int		ft_input_error(char **argv);
 int		ft_one_stack_left_a(t_stack **stack);
 int		ft_one_stack_left_b(t_stack **stack);
 int		ft_if_sorted_a(int argc, t_stack **stack);
 int		ft_if_sorted_b(int argc, t_stack **stack);
 void	ft_set_swap(t_stack **stack, int x);
+int		ft_find_smallest(t_stack **stack, int x);
+int		ft_find_largest(t_stack **stack, int x);
 
 /*
 ** MAIN_FUNCTIONS ***************************************************************
 */
-
-
 
 /*
 ** TESTFUNCTIONS ****************************************************************
