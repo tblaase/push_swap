@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:57:32 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/06 16:52:16 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/13 11:34:49 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int	ft_find_smallest(t_stack **stack, int x)
 /* this function will find the smallest number in a linked list
-** will return the value of the smallest number found */
+** will return the location of the smallest number found, 0 is on top */
 {
 	t_stack	*temp;
+	int		i;
 
+	i = 0;
 	temp = *stack;
 	while (temp != NULL)
 	{
@@ -25,15 +27,23 @@ int	ft_find_smallest(t_stack **stack, int x)
 			x = temp->content;
 		temp = temp->next;
 	}
-	return (x);
+	temp = *stack;
+	while (temp->content != x)
+	{
+		i++;
+		temp = temp->next;
+	}
+	return (i);
 }
 
 int	ft_find_largest(t_stack **stack, int x)
 /* this function will find the largest number in a linked list
-** will return the value of the largest number found */
+** will return the location of the largest number found, 0 is on top */
 {
 	t_stack	*temp;
+	int		i;
 
+	i = 0;
 	temp = *stack;
 	while (temp != NULL)
 	{
@@ -41,5 +51,11 @@ int	ft_find_largest(t_stack **stack, int x)
 			x = temp->content;
 		temp = temp->next;
 	}
-	return (x);
+	temp = *stack;
+	while (temp->content != x)
+	{
+		i++;
+		temp = temp->next;
+	}
+	return (i);
 }

@@ -6,14 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/06 16:48:00 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/13 20:03:11 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //
 // #include <fcntl.h>
-// #include <stdio.h>
+#include <stdio.h>
 //
 int	main(int argc, char **argv)
 /* get the input from the user
@@ -22,13 +22,15 @@ int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
+	char		**input;
 
-	if (ft_input_error(argv) == 1)
+	input = ft_calloc(1000, sizeof(char *));
+	argc = ft_input(argv, input);
+	if (ft_input_error(input) == 1)
 	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	argc -= 1;
 	// for testing purpose only /////////////////////
 	// argc = 4;
 	// int i = 1;
@@ -47,16 +49,16 @@ int	main(int argc, char **argv)
 	// stack_a = ft_fill_list(argc, argv);
 	// stack_b = ft_fill_list(4, (argv + 4));
 	//
-	stack_a = ft_fill_list(argc, argv);
-	ft_display_list(stack_a);
+	stack_a = ft_fill_list(argc, input);
+	// ft_display_list(stack_a);
 	// ft_display_list(stack_b);
 	if (ft_if_sorted_a(argc, &stack_a) == 1)
 		return (0);
 	// ft_big_sort_a(argc, &stack_a, &stack_b);
 	ft_sort(argc, &stack_a, &stack_b);
-	ft_display_list(stack_a);
+	// ft_display_list(stack_a);
 	// ft_display_list(stack_b);
-	//
+	//w
 	// printf("\n%d\n\n", i);
 	// i++;
 	// }

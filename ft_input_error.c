@@ -6,20 +6,20 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:32:51 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/06 16:47:27 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/13 19:35:19 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_doubles(unsigned int *numbers, char **argv, int j)
+int	ft_doubles(unsigned int *numbers, char **input, int j)
 /* this function will **argv for doubles
 ** if double is found return is 1 */
 {
 	int					number;
 	unsigned int		u;
 
-	number = ft_atoi(argv[j]);
+	number = ft_atoi(input[j]);
 	if (number < 0)
 	{
 		u = (number * -1) + 2147483647;
@@ -36,27 +36,27 @@ int	ft_doubles(unsigned int *numbers, char **argv, int j)
 	return (0);
 }
 
-int	ft_input_error(char **argv)
-/* this function will scan **argv for non digit values and doubles
+int	ft_input_error(char **input)
+/* this function will scan **input for non digit values and doubles
 ** if double or non digit found return is 1 */
 {
 	int					i;
 	int					j;
 	static unsigned int	numbers[4294967295];
 
-	j = 1;
-	while (argv[j] != NULL)
+	j = 0;
+	while (input[j] != NULL)
 	{
 		i = 0;
-		while (argv[j][i] != '\0')
+		while (input[j][i] != '\0')
 		{
-			if (argv[j][i] == '-')
+			if (input[j][i] == '-')
 				i++;
-			if (!ft_isdigit(argv[j][i]))
+			if (!ft_isdigit(input[j][i]))
 				return (1);
 			i++;
 		}
-		if (ft_doubles(numbers, argv, j) == 1)
+		if (ft_doubles(numbers, input, j) == 1)
 			return (1);
 		j++;
 	}

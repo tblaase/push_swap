@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 16:55:23 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/01 21:21:17 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/13 16:41:01 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ void	ft_sort_three(t_stack **stack_a)
 		temp = temp->next;
 		i++;
 	}
-	if (numbers[0] < numbers[1] && numbers[1] < numbers[2])
-		return ;
-	else if (numbers[0] > numbers[1] && numbers[1] < numbers[2]
+	if (numbers[0] > numbers[1] && numbers[1] < numbers[2]
 		&& numbers[0] < numbers[2])
 		ft_sa(stack_a, 1);
 	else if (numbers[0] < numbers[1] && numbers[1] > numbers[2]

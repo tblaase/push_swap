@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/06 13:04:45 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/13 19:48:37 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ft_lst_new(int content)
 	if (head == NULL)
 		return (0);
 	head->content = content;
-	head->swap = 0;
+	head->push = 0;
 	head->next = NULL;
 	return (head);
 }
@@ -49,10 +49,10 @@ void	ft_lst_copy(t_stack **input, t_stack **output)
 	t_stack	*current;
 
 	if (*output != NULL)
-		ft_free_all(output);
+		ft_lst_free(output);
 	temp = *input;
 	*output = ft_lst_new(temp->content);
-	(*output)->swap = temp->swap;
+	(*output)->push = temp->push;
 	current = *output;
 	while (temp != NULL)
 	{
@@ -60,14 +60,14 @@ void	ft_lst_copy(t_stack **input, t_stack **output)
 		if (temp == NULL)
 			return ;
 		current->next = ft_lst_new(temp->content);
-		current->next->swap = temp->swap;
+		current->next->push = temp->push;
 		current = current->next;
 		if (temp->next == NULL)
 			break ;
 	}
 }
 
-t_stack	*ft_fill_list(int argc, char **argv)
+t_stack	*ft_fill_list(int argc, char **input)
 /* this function will take an array of strings translate into integers
 ** first number of the array will be the first struct in linked list/
 ** on top of the stack */
@@ -76,13 +76,28 @@ t_stack	*ft_fill_list(int argc, char **argv)
 	t_stack	*head;
 	t_stack	*temp;
 
-	i = 1;
+	i = 0;
 	head = NULL;
-	while (i <= argc)
+	while (i < argc)
 	{
-		temp = ft_lst_new(ft_atoi(argv[i]));
+		temp = ft_lst_new(ft_atoi(input[i]));
 		ft_lst_add_back(&head, temp);
 		i++;
 	}
 	return (head);
+}
+
+int	ft_lst_size(t_stack **stack)
+{
+	t_stack	*current;
+	int		i;
+
+	i = 0;
+	current = *stack;
+	while (current != NULL)
+	{
+		current = current->next;
+		i++;
+	}
+	return (i);
 }

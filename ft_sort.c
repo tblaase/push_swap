@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:40:58 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/06 16:49:23 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/13 21:08:40 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 {
 	if (argc <= 5)
 		ft_small_sort(argc, stack_a, stack_b);
-	else
+	else if (argc <= 100)
 		ft_big_sort(argc, stack_a, stack_b);
+	else
+		ft_big_big_sort(argc, stack_a, stack_b);
 }
