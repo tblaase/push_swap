@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:45:04 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/13 13:58:37 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/14 16:58:38 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_rra(t_stack **stack_a, int flag)
 	while (temp->next != NULL)
 		temp = temp->next;
 	new = ft_lst_new(temp->content);
-	new->push = temp->push;
+	new->flag = temp->flag;
 	temp = *stack_a;
 	while (temp->next != NULL)
 	{

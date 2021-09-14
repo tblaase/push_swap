@@ -6,26 +6,26 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 18:01:55 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/13 19:20:50 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/14 20:38:54 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lst_free(t_stack **p)
+void	ft_lst_free(t_stack **stack)
 /* will free the given linked list and set it to NULL */
 {
 	t_stack	*temp;
 
 	temp = NULL;
-	while (*p)
+	while (*stack)
 	{
-		temp = (*p)->next;
-		free(*p);
-		*p = NULL;
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = NULL;
 		if (temp == NULL)
 			break ;
-		*p = temp;
+		*stack = temp;
 	}
 }
 

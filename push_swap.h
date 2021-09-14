@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/13 20:54:22 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/14 22:05:48 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,24 @@
 typedef struct s_stack
 {
 	int				content;
-	int				push;
+	int				flag;
 	struct s_stack	*next;
 }					t_stack;
+
+/*
+** STRUCT FOR QUARTERS **********************************************************
+*/
+
+typedef struct s_quart
+{
+	float	first;
+	float	second;
+	float	third;
+	float	fourth;
+	float	fifth;
+	float	sixth;
+	float	seventh;
+}			t_quart;
 
 /*
 ** ACTIONS **********************************************************************
@@ -44,7 +59,7 @@ void	ft_rrb(t_stack **stack_b, int flag);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /*
-** LISTFUNCTIONS ****************************************************************
+** LIST_FUNCTIONS ***************************************************************
 */
 
 t_stack	*ft_lst_new(int content);
@@ -54,6 +69,8 @@ void	ft_lst_copy(t_stack **input, t_stack **output);
 void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_lst_free(t_stack **p);
 int		ft_lst_size(t_stack **stack);
+void	ft_set_flag(t_stack **stack, int x);
+void	ft_del_top(t_stack **stack);
 
 /*
 ** SORT_FUNCTIONS ***************************************************************
@@ -74,24 +91,25 @@ void	ft_small_pa(int argc, t_stack **stack_a, t_stack **stack_b);
 ** HELP_FUNCTIONS ***************************************************************
 */
 
-int		ft_input_error(char **argv);
-int		ft_one_stack_left_a(t_stack **stack);
-int		ft_one_stack_left_b(t_stack **stack);
+// int		ft_one_stack_left_a(t_stack **stack);
+// int		ft_one_stack_left_b(t_stack **stack);
 int		ft_if_sorted_a(int argc, t_stack **stack);
-int		ft_if_sorted_b(int argc, t_stack **stack);
-void	ft_set_push(t_stack **stack, int x);
+// int		ft_if_sorted_b(int argc, t_stack **stack);
 int		ft_find_smallest(t_stack **stack, int x);
 int		ft_find_largest(t_stack **stack, int x);
 float	ft_median(int argc, t_stack **stack_a);
 void	ft_free_array(char **str);
-int		ft_input(char **argv, char **input);
+void	ft_quarters(t_quart **quart, int argc, t_stack **stack_a);
 
 /*
-** MAIN_FUNCTIONS ***************************************************************
+** INPUT_FUNCTIONS **************************************************************
 */
 
+int		ft_input(char **argv, char **input);
+int		ft_input_error(char **argv);
+
 /*
-** TESTFUNCTIONS ****************************************************************
+** TEST_FUNCTIONS ****************************************************************
 */
 
 

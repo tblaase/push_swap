@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/13 19:48:37 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/14 15:28:03 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ft_lst_new(int content)
 	if (head == NULL)
 		return (0);
 	head->content = content;
-	head->push = 0;
+	head->flag = 0;
 	head->next = NULL;
 	return (head);
 }
@@ -52,7 +52,7 @@ void	ft_lst_copy(t_stack **input, t_stack **output)
 		ft_lst_free(output);
 	temp = *input;
 	*output = ft_lst_new(temp->content);
-	(*output)->push = temp->push;
+	(*output)->flag = temp->flag;
 	current = *output;
 	while (temp != NULL)
 	{
@@ -60,7 +60,7 @@ void	ft_lst_copy(t_stack **input, t_stack **output)
 		if (temp == NULL)
 			return ;
 		current->next = ft_lst_new(temp->content);
-		current->next->push = temp->push;
+		current->next->flag = temp->flag;
 		current = current->next;
 		if (temp->next == NULL)
 			break ;

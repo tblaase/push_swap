@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:03:24 by tblaase           #+#    #+#             */
-/*   Updated: 2021/06/28 16:15:40 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/14 13:01:26 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_count_n(int n)
 	return (i);
 }
 
-static void	ft_putnbr(int n, char *str, unsigned int i)
+static void	ft_putnbr(int n, char *str, int i)
 {
 	if (n >= 10)
 	{
