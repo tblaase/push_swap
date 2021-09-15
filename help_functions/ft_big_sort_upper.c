@@ -6,13 +6,16 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 13:11:47 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:53:39 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 21:58:38 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/* these functions sort the stack by their single parts */
+
 void	ft_support_big_sort(t_stack **stack_a)
+/* this function makes sure that i rotate in the shortesst direction */
 {
 	t_stack	*temp;
 

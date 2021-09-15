@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 21:34:10 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 22:04:30 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ t_stack	*ft_fill_list(int argc, char **input)
 }
 
 int	ft_lst_size(t_stack **stack)
+/* will return the size of my linked list */
 {
 	t_stack	*current;
 	int		i;

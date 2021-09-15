@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 20:13:36 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:55:04 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 22:10:01 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	ft_large_pa_else(int location_high, int argc,
 	t_stack **stack_a, t_stack **stack_b)
+/* only exists because of the 25 line per function restriction */
 {
 	while (location_high < argc && *stack_b != NULL)
 	{
@@ -30,6 +31,8 @@ static void	ft_large_pa_else(int location_high, int argc,
 }
 
 void	ft_large_pa(int argc, t_stack **stack_a, t_stack **stack_b)
+/* will find the shortest way to rotate the largest value of the stack to the top
+** will sort smallest value if encountered on the way */
 {
 	int	location_high;
 

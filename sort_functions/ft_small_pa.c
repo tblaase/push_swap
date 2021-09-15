@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 20:49:12 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:55:08 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 22:10:04 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	ft_small_pa_else(int location_small, int argc,
 	t_stack **stack_a, t_stack **stack_b)
+/* only exists because of the 25 line per function restriction */
 {
 	while (location_small < argc && *stack_b != NULL)
 	{
@@ -29,6 +30,8 @@ static void	ft_small_pa_else(int location_small, int argc,
 }
 
 void	ft_small_pa(int argc, t_stack **stack_a, t_stack **stack_b)
+/* will find the shortest way to rotate the smallest value of the stack to the top
+** will sort largest value if encountered on the way */
 {
 	int	location_small;
 

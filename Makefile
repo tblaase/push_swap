@@ -6,7 +6,7 @@
 #    By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 15:37:12 by tblaase           #+#    #+#              #
-#    Updated: 2021/09/15 18:56:51 by tblaase          ###   ########.fr        #
+#    Updated: 2021/09/15 21:56:15 by tblaase          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,6 @@ CFILES =	actions/pa.c\
 			sort_functions/ft_sort_three.c\
 			sort_functions/ft_sort.c\
 			push_swap.c\
-
-UP = "\033[A"
-CUT = "\033[K"
 
 OBJECTS = $(CFILES:.c=.o)
 

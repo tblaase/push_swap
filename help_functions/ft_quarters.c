@@ -6,15 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 15:09:31 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:54:08 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 22:02:17 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 void	ft_quarters(t_quart **quart, int argc, t_stack **stack_a)
-/* will find the median and the median of the lower and upper part
-** those numbers will be stored in a struct called quart */
+/* will "split" my stack into four parts, all of the same size */
 {
 	t_stack	*temp;
 

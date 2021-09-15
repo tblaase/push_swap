@@ -6,13 +6,15 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:01:43 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 19:33:36 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 22:03:47 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 int	ft_input(char **argv, char **input)
+/* this function will turn argv into a valid input
+** every number will be turned into a single string */
 {
 	char		**split;
 	int			j;

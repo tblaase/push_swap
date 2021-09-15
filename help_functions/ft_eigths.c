@@ -6,13 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 11:44:52 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:53:44 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 22:10:46 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 static void	ft_eigths_help(t_quart **quart, int argc, t_stack **stack_a)
+/* only exists because of the 25 line per function restriction */
 {
 	t_stack	*temp;
 
@@ -33,6 +34,7 @@ static void	ft_eigths_help(t_quart **quart, int argc, t_stack **stack_a)
 }
 
 void	ft_eigths(t_quart **quart, int argc, t_stack **stack_a)
+/* will "split" my stack into eight parts, all of the same size */
 {
 	t_stack	*temp;
 

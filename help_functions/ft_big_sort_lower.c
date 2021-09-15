@@ -6,11 +6,13 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 13:11:38 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:53:35 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 21:57:51 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+/* these functions sort the stack by their single parts */
 
 void	ft_first(int argc, t_stack **stack_a, t_stack **stack_b,
 	t_quart **quart)
