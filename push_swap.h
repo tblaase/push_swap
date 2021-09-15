@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:32:33 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 13:48:32 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,12 @@ void	ft_third_big(int argc, t_stack **stack_a, t_stack **stack_b,
 			t_quart **quart);
 void	ft_fourth(int argc, t_stack **stack_a, t_stack **stack_b,
 			t_quart **quart);
-
+void	ft_fifth(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+void	ft_sixth(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+void	ft_seventh(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
 void	ft_last(int argc, t_stack **stack_a, t_stack **stack_b);
 
 /*
@@ -118,11 +123,5 @@ void	ft_last(int argc, t_stack **stack_a, t_stack **stack_b);
 
 int		ft_input(char **argv, char **input);
 int		ft_input_error(char **argv);
-
-/*
-** TEST_FUNCTIONS ***************************************************************
-*/
-
-void	ft_display_list(t_stack *stack); // remove before submitting!!!!!!!!!!!!
 
 #endif
