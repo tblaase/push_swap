@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 13:09:45 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:10:03 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:54:22 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_del_top(t_stack **stack)
 /* will free the first element of the linked list

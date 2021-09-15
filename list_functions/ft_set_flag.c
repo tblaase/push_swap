@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_if_sorted_a.c                                   :+:      :+:    :+:   */
+/*   ft_set_flag.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 17:35:30 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 12:06:27 by tblaase          ###   ########.fr       */
+/*   Created: 2021/09/05 16:34:03 by tblaase           #+#    #+#             */
+/*   Updated: 2021/09/15 15:54:45 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_if_sorted(int argc, t_stack **stack)
-/* this function returns 1 if the stack is sorted corretly, 0 if not */
+void	ft_set_flag(t_stack **stack, int x)
+/* will set all push values of linked list stack to value of x
+** does nothing if stack == NULL */
 {
 	t_stack	*temp;
-	int		i;
 
-	i = 0;
 	temp = *stack;
-	while (temp)
+	while (temp != NULL)
 	{
-		if (temp->next != NULL && temp->content < temp->next->content)
+		if (temp->next == NULL)
 		{
-			temp = temp->next;
-			i++;
-		}
-		else if (temp->next == NULL)
-		{
-			i++;
-			if (i == argc)
-				return (1);
-		}
-		else
+			temp->flag = x;
 			break ;
+		}
+		temp->flag = x;
+		temp = temp->next;
 	}
-	return (0);
 }

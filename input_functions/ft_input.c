@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:01:43 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:59:21 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:54:18 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_input(char **argv, char **input)
 {

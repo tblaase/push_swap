@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 12:15:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 14:33:57 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 18:20:06 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,18 @@ int	main(int argc, char **argv)
 	argc = ft_input(argv, input);
 	if (ft_input_error(input) == 1)
 	{
-		write(2, "Error\n", 6);
+		write(2, "Error", 5);
+		write(2, "\n", 1);
 		ft_free_array(input);
 		return (1);
 	}
 	stack_a = ft_fill_list(argc, input);
 	ft_free_array(input);
 	if (ft_if_sorted(argc, &stack_a) == 1)
+	{
+		ft_lst_free(&stack_a);
 		return (0);
+	}
 	ft_sort(argc, &stack_a, &stack_b);
 	return (0);
 }

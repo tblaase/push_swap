@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 11:44:52 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:09:01 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:53:44 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ft_eigths_help(t_quart **quart, int argc, t_stack **stack_a)
 {

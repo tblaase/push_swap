@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 18:57:32 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/14 15:45:42 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:53:48 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_find_smallest(t_stack **stack, int x)
 /* this function will find the smallest number in a linked list

@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:40:58 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 12:24:05 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:55:25 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ft_small_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 /* will determine which small_sort function to call */

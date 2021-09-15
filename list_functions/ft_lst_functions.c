@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/14 15:28:03 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:54:27 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*ft_lst_new(int content)
 /* same function as libft function but different struct it uses */

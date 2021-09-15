@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 20:13:36 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/14 15:31:53 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:55:04 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ft_large_pa_else(int location_high, int argc,
 	t_stack **stack_a, t_stack **stack_b)

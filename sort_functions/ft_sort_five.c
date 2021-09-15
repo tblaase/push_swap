@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:46:12 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/06 16:47:08 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:55:12 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 /* this function will sort by ascending order into stack_a

@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 14:46:00 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/13 16:41:35 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:55:16 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {

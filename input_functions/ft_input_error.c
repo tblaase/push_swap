@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:32:51 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/13 19:35:19 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:54:13 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_doubles(unsigned int *numbers, char **input, int j)
 /* this function will **argv for doubles

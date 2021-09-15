@@ -6,7 +6,7 @@
 #    By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/26 13:57:50 by tblaase           #+#    #+#              #
-#    Updated: 2021/07/12 11:15:51 by tblaase          ###   ########.fr        #
+#    Updated: 2021/09/15 17:27:39 by tblaase          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 CFILES = 	ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
+			ft_free.c\
 			ft_intlen.c\
 			ft_isalnum.c\
 			ft_isalpha.c\
@@ -42,6 +43,8 @@ CFILES = 	ft_atoi.c\
 			ft_strlen.c\
 			ft_strmapi.c\
 			ft_strncmp.c\
+			ft_strndup.c\
+			ft_strnjoin.c\
 			ft_strnstr.c\
 			ft_strrchr.c\
 			ft_strtrim.c\
@@ -59,6 +62,10 @@ BONUS = 	ft_lstnew.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
 
+OBJECTS = $(CFILES:.c=.o)
+
+BONUSOBJECTS = $(BONUS:.c=.o)
+
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -c
@@ -67,21 +74,16 @@ MAIN = main
 
 all: $(NAME) bonus
 
-$(NAME): compile
-	ar -rcs $(NAME) *.o
-	ranlib $(NAME)
-
-compile:
-	$(CC) $(CFLAGS) -c $(CFILES)
+$(NAME): $(OBJECTS)
+	ar -rcs $(NAME) $(OBJECTS)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJECTS) $(BONUSOBJECTS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus:
-	$(CC) $(CFLAGS) -c $(BONUS)
-	ar -rcs $(NAME) *.o
+bonus: $(BONUSOBJECTS)
+	ar -rcs $(NAME) $(BONUSOBJECTS)

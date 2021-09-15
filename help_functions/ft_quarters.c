@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 15:09:31 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:10:11 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:54:08 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_quarters(t_quart **quart, int argc, t_stack **stack_a)
 /* will find the median and the median of the lower and upper part

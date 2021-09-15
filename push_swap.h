@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:48:32 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 18:19:45 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_stack	*ft_fill_list(int argc, char **argv);
 void	ft_lst_add_back(t_stack **head, t_stack *new);
 void	ft_lst_copy(t_stack **input, t_stack **output);
 void	ft_push_smallest_a(t_stack **stack_a, t_stack **stack_b);
-void	ft_lst_free(t_stack **p);
+void	ft_lst_free(t_stack **stack);
 int		ft_lst_size(t_stack **stack);
 void	ft_set_flag(t_stack **stack, int x);
 void	ft_del_top(t_stack **stack);

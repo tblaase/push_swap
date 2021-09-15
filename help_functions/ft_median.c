@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 12:16:41 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:03:11 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:54:02 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ft_rotate_smallest(t_stack **stack)
 {

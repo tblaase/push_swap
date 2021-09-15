@@ -6,16 +6,14 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 11:14:28 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 13:53:08 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 15:59:34 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 {
-	int		i;
-	t_stack	*temp;
 	t_quart	*quart;
 
 	quart = ft_calloc(1, sizeof(t_quart));
@@ -29,8 +27,6 @@ void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 
 void	ft_big_big_sort(int argc, t_stack **stack_a, t_stack **stack_b)
 {
-	int		i;
-	t_stack	*temp;
 	t_quart	*quart;
 
 	quart = ft_calloc(1, sizeof(t_quart));
