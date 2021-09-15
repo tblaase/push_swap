@@ -6,13 +6,14 @@
 #    By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/26 13:57:50 by tblaase           #+#    #+#              #
-#    Updated: 2021/09/15 17:27:39 by tblaase          ###   ########.fr        #
+#    Updated: 2021/09/15 21:22:28 by tblaase          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFILES = 	ft_atoi.c\
+CFILES =	ft_atoi.c\
+			ft_atol.c\
 			ft_bzero.c\
 			ft_calloc.c\
 			ft_free.c\

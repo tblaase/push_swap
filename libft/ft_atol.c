@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_input.c                                         :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 18:01:43 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 19:33:36 by tblaase          ###   ########.fr       */
+/*   Created: 2021/09/15 21:19:26 by tblaase           #+#    #+#             */
+/*   Updated: 2021/09/15 21:20:23 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-int	ft_input(char **argv, char **input)
+long long	ft_atol(char *str)
 {
-	char		**split;
-	int			j;
+	int			c;
 	int			i;
-	int			end;
+	long long	x;
 
-	end = 0;
-	j = 1;
 	i = 0;
-	while (argv[j] != NULL)
+	c = 1;
+	x = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		split = ft_split(argv[j], ' ');
-		i = 0;
-		while (split[i] != NULL)
-		{
-			input[end] = ft_strdup(split[i]);
-			i++;
-			end++;
-		}
-		ft_free_array(split);
-		j++;
+		if (str[i] == '-')
+			c = -1;
+		i++;
 	}
-	return (end);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		x = x * 10 + (str[i] - 48);
+		i++;
+	}
+	return (x * c);
 }

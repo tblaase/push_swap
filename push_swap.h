@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 18:19:45 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 21:16:53 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 ** LIST_FUNCTIONS ***************************************************************
 */
 
-t_stack	*ft_lst_new(int content);
+t_stack	*ft_lst_new(long long content);
 t_stack	*ft_fill_list(int argc, char **argv);
 void	ft_lst_add_back(t_stack **head, t_stack *new);
 void	ft_lst_copy(t_stack **input, t_stack **output);

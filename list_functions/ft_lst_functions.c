@@ -6,17 +6,22 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 15:54:27 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 21:34:10 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*ft_lst_new(int content)
+t_stack	*ft_lst_new(long long content)
 /* same function as libft function but different struct it uses */
 {
 	t_stack	*head;
 
+	if (content < -2147483648 || content > 2147483647)
+	{
+		head = NULL;
+		return (head);
+	}
 	head = malloc(sizeof(t_stack));
 	if (head == NULL)
 		return (0);
@@ -80,7 +85,13 @@ t_stack	*ft_fill_list(int argc, char **input)
 	head = NULL;
 	while (i < argc)
 	{
-		temp = ft_lst_new(ft_atoi(input[i]));
+		temp = ft_lst_new(ft_atol(input[i]));
+		if (temp == NULL)
+		{
+			ft_lst_free(&head);
+			write(2, "Error\n", 6);
+			break ;
+		}
 		ft_lst_add_back(&head, temp);
 		i++;
 	}
