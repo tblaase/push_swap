@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 17:34:14 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/14 22:05:48 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 13:32:33 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void	ft_lst_free(t_stack **p);
 int		ft_lst_size(t_stack **stack);
 void	ft_set_flag(t_stack **stack, int x);
 void	ft_del_top(t_stack **stack);
+void	ft_del_larger_x(t_stack **stack, float x);
+void	ft_del_smaller_x(t_stack **stack, float x);
 
 /*
 ** SORT_FUNCTIONS ***************************************************************
@@ -84,22 +86,31 @@ void	ft_big_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_big_big_sort(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_large_pa(int argc, t_stack **stack_a, t_stack **stack_b);
 void	ft_small_pa(int argc, t_stack **stack_a, t_stack **stack_b);
-// void	ft_big_sort_a(int argc, t_stack **stack_a, t_stack **stack_b);
-// void	ft_big_sort_b(int argc, t_stack **stack_a, t_stack **stack_b);
 
 /*
 ** HELP_FUNCTIONS ***************************************************************
 */
 
-// int		ft_one_stack_left_a(t_stack **stack);
-// int		ft_one_stack_left_b(t_stack **stack);
-int		ft_if_sorted_a(int argc, t_stack **stack);
-// int		ft_if_sorted_b(int argc, t_stack **stack);
+int		ft_if_sorted(int argc, t_stack **stack);
 int		ft_find_smallest(t_stack **stack, int x);
 int		ft_find_largest(t_stack **stack, int x);
 float	ft_median(int argc, t_stack **stack_a);
 void	ft_free_array(char **str);
 void	ft_quarters(t_quart **quart, int argc, t_stack **stack_a);
+void	ft_eigths(t_quart **quart, int argc, t_stack **stack_a);
+void	ft_support_big_sort(t_stack **stack_a);
+void	ft_first(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+void	ft_second(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+void	ft_third_small(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+void	ft_third_big(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+void	ft_fourth(int argc, t_stack **stack_a, t_stack **stack_b,
+			t_quart **quart);
+
+void	ft_last(int argc, t_stack **stack_a, t_stack **stack_b);
 
 /*
 ** INPUT_FUNCTIONS **************************************************************
@@ -109,9 +120,8 @@ int		ft_input(char **argv, char **input);
 int		ft_input_error(char **argv);
 
 /*
-** TEST_FUNCTIONS ****************************************************************
+** TEST_FUNCTIONS ***************************************************************
 */
-
 
 void	ft_display_list(t_stack *stack); // remove before submitting!!!!!!!!!!!!
 

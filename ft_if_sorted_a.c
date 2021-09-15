@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_if_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_if_sorted_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 17:35:30 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/05 16:58:05 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 12:06:27 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_if_sorted_a(int argc, t_stack **stack)
+int	ft_if_sorted(int argc, t_stack **stack)
 /* this function returns 1 if the stack is sorted corretly, 0 if not */
 {
 	t_stack	*temp;

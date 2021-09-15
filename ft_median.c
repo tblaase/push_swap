@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 12:16:41 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/14 21:04:34 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/15 13:03:11 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,7 @@ float	ft_median(int argc, t_stack **stack_a)
 	ft_lst_copy(stack_a, &temp);
 	if (argc % 2 == 0)
 	{
-		// while (temp)
-		// {
-		// 	ft_rotate_smallest(&temp);
-		// 	if (i < argc / 2)
-		// 		temp->content = 2147483647;
-		// 	else
-		// 		break ;
-		// 	i++;
-		// }
-		i = ft_median_while(&temp, i, argc);//
+		i = ft_median_while(&temp, i, argc);
 		median = (float)temp->content;
 		temp->content = 2147483647;
 		ft_rotate_smallest(&temp);
@@ -66,16 +57,7 @@ float	ft_median(int argc, t_stack **stack_a)
 	}
 	else
 	{
-		// while (temp)
-		// {
-		// 	ft_rotate_smallest(&temp);
-		// 	if (i < (argc / 2) + 1)
-		// 		temp->content = 2147483647;
-		// 	else
-		// 		break ;
-		// 	i++;
-		// }
-		i = ft_median_while(&temp, i, argc);//
+		i = ft_median_while(&temp, i, argc);
 		median = (float)temp->content;
 	}
 	ft_lst_free(&temp);
