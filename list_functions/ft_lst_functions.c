@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 18:42:22 by tblaase           #+#    #+#             */
-/*   Updated: 2021/09/15 22:04:30 by tblaase          ###   ########.fr       */
+/*   Updated: 2021/09/17 13:17:05 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ t_stack	*ft_fill_list(int argc, char **input)
 		if (temp == NULL)
 		{
 			ft_lst_free(&head);
-			write(2, "Error\n", 6);
 			break ;
 		}
 		ft_lst_add_back(&head, temp);
 		i++;
 	}
+	ft_free_array(input);
 	return (head);
 }
 
